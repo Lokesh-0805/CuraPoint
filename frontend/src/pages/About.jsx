@@ -14,7 +14,7 @@ const About = () => {
       {/* ---------- About Section ---------- */}
       <div className="my-10 flex flex-col md:flex-row gap-12">
         <img
-          className="w-full md:max-w-[360px] rounded-lg"
+          className="w-full md:max-w-90 rounded-lg"
           src={assets.about_image}
           alt="About CuraPoint"
         />

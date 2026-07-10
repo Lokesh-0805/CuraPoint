@@ -14,7 +14,7 @@ const Contact = () => {
       {/* ---------- Content ---------- */}
       <div className="my-10 flex flex-col justify-center md:flex-row gap-10 mb-28 text-sm">
         <img
-          className="w-full md:max-w-[360px] rounded-lg"
+          className="w-full md:max-w-90 rounded-lg"
           src={assets.contact_image}
           alt="Contact us"
         />
