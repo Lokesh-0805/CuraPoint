@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
-// user authentication middleware
-const authUser = async (req,res,next) => {
+// user authentication middleware for get
+const authUserget = async (req,res,next) => {
     try {
         
         const {token} = req.headers
@@ -10,7 +10,7 @@ const authUser = async (req,res,next) => {
         }
         const token_decode = jwt.verify(token,process.env.JWT_SECRET)
         
-        req.body.userId = token_decode.id
+        req.userId = token_decode.id
 
         next()
 
@@ -21,6 +21,5 @@ const authUser = async (req,res,next) => {
     }
 }
 
+export default authUserget
 
-
-export default authUser
