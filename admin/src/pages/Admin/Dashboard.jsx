@@ -26,7 +26,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-       
+
           <div className="flex items-center gap-4 bg-white p-5 min-w-82.5 flex-1 rounded-xl border shadow-sm hover:shadow-md hover:-translate-y-1 transition">
             <img className="w-14" src={assets.appointments_icon} alt="" />
             <div>
@@ -35,7 +35,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-   
+
           <div className="flex items-center gap-4 bg-white p-5 min-w-82.5 flex-1 rounded-xl border shadow-sm hover:shadow-md hover:-translate-y-1 transition">
             <img className="w-14" src={assets.patients_icon} alt="" />
             <div>
@@ -62,12 +62,11 @@ const Dashboard = () => {
                   <p className="text-gray-600">{slotDateFormat(item.slotDate)} </p>
                 </div>
 
-                {
-                  item.cancelled
-                    ? (<span className="text-red-400 text-xs font-medium">Cancelled</span>)
-                    : item.isCompleted ? 
-                    (<span className="text-green-400 text-xs font-medium">Completed</span>)
-                      : (<img onClick={() => cancelAppointment(item._id)} className="w-9 p-1 rounded-full hover:bg-red-100 cursor-pointer transition" src={assets.cancel_icon} alt="" />)
+                {item.cancelled
+                  ? <p className="text-red-400 text-xs font-medium">Cancelled</p>
+                  : item.isCompleted
+                    ? <p className="text-green-500 text-xs font-medium">Completed</p>
+                    : <img onClick={() => cancelAppointment(item._id)} className="w-10 cursor-pointer" src={assets.cancel_icon} alt="" />
                 }
               </div>
             ))}
