@@ -47,25 +47,26 @@ const Dashboard = () => {
 
 
         <div className="bg-white rounded-xl border shadow-sm">
-          <div className="flex items-center gap-3 px-6 py-4 border-b bg-gray-50 rounded-t-xl">
-            <img className="w-5" src={assets.list_icon} alt="" />
-            <p className="font-semibold text-gray-800">Latest Bookings</p>
+          <div className="flex items-center gap-2.5 px-4 py-4 mt-10 rounded-t border">
+            <img src={assets.list_icon} alt="" />
+            <p className="font-semibold">Latest Bookings</p>
           </div>
 
           <div className="flex flex-col divide-y">
             {dashData.latestAppointments.map((item, index) => (
-              <div key={index} className="flex items-center px-6 py-4 hover:bg-gray-50 transition">
-                <img className="w-11 h-11 rounded-full object-cover border" src={item.docData.image} alt="" />
+              <div key={index} className="flex items-center px-6 py-3 gap-3 hover:bg-gray-100">
+                <img className="w-10 rounded-full" src={item.docData.image} alt="" />
 
-                <div className="flex-1 ml-4">
+                <div className="flex-1 text-sm">
                   <p className="font-medium text-gray-800"> {item.docData.name} </p>
-                  <p className="text-xs text-gray-500">{slotDateFormat(item.slotDate)} </p>
+                  <p className="text-gray-600">{slotDateFormat(item.slotDate)} </p>
                 </div>
 
                 {
                   item.cancelled
-                    ? (<span className="text-xs font-semibold text-red-500 bg-red-50 px-3 py-1 rounded-full">Cancelled</span>)
-                    : item.isCompleted ? (<span className="text-xs font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">Completed</span>)
+                    ? (<span className="text-red-400 text-xs font-medium">Cancelled</span>)
+                    : item.isCompleted ? 
+                    (<span className="text-green-400 text-xs font-medium">Completed</span>)
                       : (<img onClick={() => cancelAppointment(item._id)} className="w-9 p-1 rounded-full hover:bg-red-100 cursor-pointer transition" src={assets.cancel_icon} alt="" />)
                 }
               </div>
