@@ -4,7 +4,7 @@
 
 ## 🌐 Live Demo
 
-*   **Patient Portal (Frontend):** [https://cura-point-275z.vercel.app/](https://cura-point-275z.vercel.app/)
+*   **Patient Portal (Frontend):** [https://curapoint.vercel.app/](https://curapoint.vercel.app/)
 *   **Admin/Doctor Dashboard:** [https://cura-point-admin.vercel.app/](https://cura-point-admin.vercel.app/)
 
 *(Note: The Frontend, Admin Panel, and Backend API are all fully deployed and hosted on Vercel).*
